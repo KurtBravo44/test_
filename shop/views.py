@@ -12,7 +12,6 @@ class ItemRetrieveApiView(generics.RetrieveAPIView):
 
     def get(self, request, *args, **kwargs):
         item = self.get_object()
-        html_content = f"<html><body><h1>{item.name}</h1><p>{item.description}</p></body></html>"
         return render(request, 'shop/item_detail.html', {'item': item})
 
 class PaymentRetrieveApiView(generics.RetrieveAPIView):
